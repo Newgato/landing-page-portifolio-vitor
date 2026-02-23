@@ -111,9 +111,8 @@
   .contato-card {
     padding: 30px 20px;
     margin: 0 15px;
-    /* Reduz um pouco o tamanho para não espremer no celular */
     max-width: 60%; 
-    transform: scale(0.8);
+    /*transform: scale(0.8);*/
   }
 
   .contato-card h2 {
@@ -121,7 +120,7 @@
   }
 
   .contato-info p {
-    font-size: 0.95rem; /* Evita que o e-mail quebre a linha de um jeito feio */
+    font-size: 0.95rem;
   }
 
   .contato-item {

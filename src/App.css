@@ -213,7 +213,7 @@ main.main-content {
 
 .code-body-style {
   margin: 40px;
-  max-height: 40vh;
+  max-height: 65vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -264,9 +264,10 @@ main.main-content {
     width: 100%;
     max-width: 85%;
     min-width: 0;
-    max-height: 70vh;
+    max-height: 65vh;
     display: flex;
     flex-direction: column;
+    height: 65vh;
   }
 
   .code-body-style {
@@ -286,4 +287,18 @@ main.main-content {
     scrollbar-width: none;
     transform: scale(0.8);
   }
+}
+
+@media (max-height: 650px) and (orientation: landscape) {
+    .code-body-style {
+      margin: 20px 40px; /* Reduz margem superior/inferior para ganhar espaço */
+      max-height: 55vh; /* Ajuste fino para não bater na borda da janela */
+    }
+    
+    .code-style {
+      max-height: 90vh; /* Permite que a janela "janela" cresça mais na vertical */
+    }
+    .cont-style {
+      transform: scale(0.7);
+    }
 }
