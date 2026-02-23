@@ -1,0 +1,84 @@
+/* --- ESTRUTURA PRINCIPAL --- */
+.Footer-Principal {
+  width: 100%;
+  background: #1a1a1a;
+  height: 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- LISTA E ITENS --- */
+ul {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  width: 200px;
+  justify-content: center;
+}
+
+.Lista-Itens {
+  margin-top: 3px;
+}
+
+li.Item {
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+li.Item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+li.Item p {
+  margin: 0;
+}
+
+li.Item:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* --- IMAGENS E TEXTOS --- */
+img.img-footer {
+  width: 30px;
+}
+
+.nome-footer {
+  margin: 10px;
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE / CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+  .Footer-Principal {
+    height: auto;
+    padding-bottom: 30px; 
+    padding-top: 5px;
+  }
+
+  ul {
+    gap: 25px;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .nome-footer {
+    font-size: 0.75rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  img.img-footer {
+      width: 25px;
+  }
+}

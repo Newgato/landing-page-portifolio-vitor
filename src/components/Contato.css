@@ -1,0 +1,130 @@
+/* --- CONTAINER E CARD PRINCIPAL --- */
+.contato-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contato-card {
+  background: rgba(10, 25, 47, 0.7); /* Fundo azul escuro transparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contato-card h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-shadow: -3px 0px 0px rgba(0, 255, 255, 0.7), 3px 0px 0px rgba(255, 0, 255, 0.7);
+}
+
+.contato-subtitulo {
+  color: #a5b3ce;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+/* --- LISTA DE CONTATOS --- */
+.contato-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.contato-item:hover {
+  background: rgba(0, 234, 255, 0.1);
+  border-color: #00eaff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 234, 255, 0.2);
+}
+
+/* --- ÍCONES E TEXTOS --- */
+.icone-neon {
+  font-size: 2rem;
+  color: #00eaff;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contato-info span {
+  display: block;
+  font-size: 0.85rem;
+  color: #a5b3ce;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.contato-info p {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contato-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.icon-contact{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE / CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+  .contato-card {
+    padding: 30px 20px;
+    margin: 0 15px;
+    /* Reduz um pouco o tamanho para não espremer no celular */
+    max-width: 60%; 
+    transform: scale(0.8);
+  }
+
+  .contato-card h2 {
+    font-size: 2rem;
+  }
+
+  .contato-info p {
+    font-size: 0.95rem; /* Evita que o e-mail quebre a linha de um jeito feio */
+  }
+
+  .contato-item {
+    padding: 15px;
+  }
+}

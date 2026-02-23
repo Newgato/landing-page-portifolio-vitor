@@ -1,0 +1,288 @@
+div#root {
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+button:focus, a:focus {
+  outline: none;
+}
+
+.app-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+main.main-content {
+  height: calc(100% - 164px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 50vh;
+  overflow: hidden;
+  color: white;
+}
+
+.transition-wrapper {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  margin: 0 10px;
+}
+
+.conteudo-dinamico {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.cont-style {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* === ANIMAÇÕES DE TRANSIÇÃO === */
+.slide-enter {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.slide-enter-active {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 500ms ease-in-out, opacity 500ms ease-in-out;
+  z-index: 1;
+}
+
+.slide-exit {
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 0;
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 500ms ease-in-out, opacity 500ms ease-in-out;
+  z-index: 0;
+}
+
+.slide-reverse-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.slide-reverse-enter-active {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+  z-index: 1;
+}
+
+.slide-reverse-exit {
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 0;
+}
+
+.slide-reverse-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+  z-index: 0;
+}
+
+/* === BOTÕES (SETAS LATERAIS) === */
+.main-content button.seta-esquerda, .main-content button.seta-direita {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.seta-app-container {
+  border: 1px solid #00eaff;
+  box-shadow: 0 0 10px #00eaff;
+  background-color: transparent;
+  will-change: filter;
+  transition: filter 300ms;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.seta-app-container:hover {
+  border-color: #00eaff;
+  filter: drop-shadow(0 0 2em #00eaff);
+}
+
+/* === VÍDEO DO GATO === */
+.video-fullscreen-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-fullscreen-overlay video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.text-video-cat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  font-size: x-small;
+}
+
+/* === ABA SOBRE (JANELA DE CÓDIGO) === */
+.code-style {
+  border-radius: 10px;
+  
+  background: rgba(45, 45, 45, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  max-width: 50%;
+  max-height: 80%;
+  min-width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.code-top-bar {
+  height: 30px;
+  width: 100%;
+  background: rgba(10, 59, 117, 0.9);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.circle-top-bar {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.circle-top-bar-red {
+  background-color: rgb(255, 65, 65);
+}
+
+.circle-top-bar-yellow {
+  background-color: rgb(255, 255, 73);
+}
+
+.circle-top-bar-green {
+  background-color: rgb(93, 255, 93);
+}
+
+.code-p {
+  width: 76%;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.code-body-style {
+  margin: 40px;
+  max-height: 40vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.code-body-style h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE / CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+  .main-content {
+    position: relative;
+  }
+  
+  /* --- AJUSTE DOS BOTÕES LATERAIS (SETAS) --- */
+  .main-content button.seta-esquerda,
+  .main-content button.seta-direita {
+    position: absolute;
+    z-index: 20;
+    margin: 0;
+    width: 35px; 
+    height: 35px;
+    font-size: 1rem; 
+    opacity: 0.8; 
+  }
+
+  .main-content button.seta-esquerda {
+    left: 5px;
+  }
+  
+  .main-content button.seta-direita {
+    right: 5px;
+  }
+
+  .transition-wrapper {
+    margin: 0;
+  }
+  
+  .conteudo-dinamico {
+    padding: 0 40px;
+  }
+
+  /* --- AJUSTE DA JANELA DE CÓDIGO (SOBRE) --- */
+  .code-style {
+    width: 100%;
+    max-width: 85%;
+    min-width: 0;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .code-body-style {
+    margin: 10px;
+    flex: 1;
+    overflow-y: auto; 
+    height: auto;
+  }
+
+  .code-body-style h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .cont-style {
+    overflow: auto;
+    scrollbar-width: none;
+  }
+}

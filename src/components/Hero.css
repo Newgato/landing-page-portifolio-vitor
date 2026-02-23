@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/* --- LAYOUT PRINCIPAL --- */
+.hero-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 70px;
+}
+
+/* --- TEXTO GLITCH E APRESENTAÇÃO --- */
+.text-apresentacao h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: -3px 0px 0px rgba(0, 255, 255, 0.7), 3px 0px 0px rgba(255, 0, 255, 0.7);
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+@keyframes glitch-anim {
+  0% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
+  25% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
+  50% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
+  75% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
+  100% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
+}
+
+.text-apresentacao h1:hover {
+  animation: glitch-anim 5s infinite;
+  cursor: default;
+}
+
+.text-descricao {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #a5b3ce;
+  font-weight: 300;
+  letter-spacing: 1px;
+  max-width: 600px;
+}
+
+.text-descricao p {
+  margin: 0;
+}
+
+/* --- IMAGEM E MOLDURA --- */
+.componente-imagem {
+  width: 400px;
+  height: 550px;
+  position: relative;
+  background-image: url('../assets/fundo-tech.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 20, 40, 0.7);
+  border: 3px solid #00eaff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00eaff, inset 0 0 15px #00eaff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.componente-imagem img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+
+/* --- DADOS, BOTÕES E HABILIDADES --- */
+.componente-dados {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.btn-hero {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 100px;
+  background-color: transparent;
+  border: 2px solid #00eaff;
+  color: #00eaff;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #00eaff;
+  will-change: filter;
+  transition: filter 300ms;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.btn-hero:hover {
+  filter: drop-shadow(0 0 2em #00eaff);
+  border-color: #00eaff;
+  color: #00eaff;
+}
+
+.btn-hero p {
+  margin: 0;
+}
+
+.lista-habilidades {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.lista-habilidades img {
+  width: 50px;
+  height: 50px;
+}
+
+.lista-habilidades img.css3-hab {
+  width: 38px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE / CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+  .hero-principal {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .text-apresentacao h1 {
+    font-size: 2.2rem;
+  }
+
+  .text-descricao {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+
+  .componente-imagem {
+    width: 280px;
+    height: 380px;
+  }
+
+  .componente-dados {
+    align-items: center;
+  }
+
+  .lista-habilidades {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 400px) {
+  .componente-imagem {
+    width: 220px;
+    height: 300px;
+  }
+
+  .text-apresentacao h1 {
+    font-size: 2rem;
+  }
+
+  .hero-principal {
+    gap: 15px;
+  }
+}
