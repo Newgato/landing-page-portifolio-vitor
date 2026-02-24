@@ -42,7 +42,7 @@ function Projetos () {
             </div>
             <div className="projeto-info">
               <span>Front-end • React & Glassmorphism</span>
-              <p>Landing Page Interativa (Este site)</p>
+              <p>Landing Page Interativa (GitHub)</p>
             </div>
           </a>
 
